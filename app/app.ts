@@ -2,6 +2,7 @@ import {App, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
 import {NoteService} from './providers/note-service/note-service';
+import {TabsPage} from './pages/tabs/tabs';
 
 @App({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
@@ -9,7 +10,7 @@ import {NoteService} from './providers/note-service/note-service';
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

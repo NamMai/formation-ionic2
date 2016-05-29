@@ -1,0 +1,32 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Things I have Done
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="done">
+
+    <ion-card>
+    <ion-list>
+      <ion-item-sliding  *ngFor="let item of notes" >
+
+        
+        <button ion-item (click)="noteSelected(item)" >
+
+            <ion-label>{{item.title}} <p>{{item.text | truncate: 20}} <br> {{item.checked}}</p></ion-label>
+            <ion-checkbox checked={{item.checked}} (click)="checkthat(item)" ></ion-checkbox>
+
+        </button>
+
+
+        <ion-item-options>
+          <button danger (click)="removeNote(item)"><ion-icon name="trash"></ion-icon> Delete</button>
+        </ion-item-options>
+
+
+      </ion-item-sliding>
+
+    </ion-list>
+
+    </ion-card>
+  </ion-content>

@@ -49,7 +49,6 @@ export class NoteService {
 
   public checkthatNote(note: Note){
 
-
     let sql = 'UPDATE notes SET title = \"' + note.title + '\", text = \"' + note.text + '\", checked = \"' + !note.checked + '\" WHERE id = \"' + note.id + '\"';
     this.storage.query(sql);
   }
